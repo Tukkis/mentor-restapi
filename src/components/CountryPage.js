@@ -1,10 +1,10 @@
 function CountryPage() {
     return (
-      <div className="">
+      <div className="bg-white">
         CountryPage
       </div>
     );
   }
   
-  export default CountryPage;
+export default CountryPage;
   

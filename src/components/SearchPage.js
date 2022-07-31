@@ -1,7 +1,9 @@
-function SearchPage() {
+import SearchBar from './SearchBar'
+
+function SearchPage(props) {
     return (
-      <div className="">
-        SearchPage
+      <div className="bg-white">
+        <SearchBar {...props}></SearchBar>
       </div>
     );
   }
