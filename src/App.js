@@ -7,7 +7,9 @@ function App() {
 
   const [ pageState, setPageState ] = useState(0)
   const [ modeState, setModeState ] = useState(0)
-  const [ filter, setFilter ] = useState('')
+  const [ countries, setCountries ] = useState([])
+  const [ filter, setFilter ] = useState(0)
+  const [ searchValue, setSearchValue ] = useState('')
   const [ selected, setSelected ] = useState(0)
 
   function modeChangeHandler(){
@@ -15,10 +17,10 @@ function App() {
   }
 
   return (
-    <div className="w-full bg-gray-500	h-screen">
+    <div className="w-full h-screen bg-gray-50">
       <Header setModeState={modeChangeHandler}></Header>
       {
-        pageState === 0 ? <SearchPage filter={filter} setFilter={setFilter}></SearchPage> : <CountryPage></CountryPage>
+        pageState === 0 ? <SearchPage setPageState={setPageState} selected={selected} setSelected={setSelected} searchValue={searchValue} setSearchValue={setSearchValue} filter={filter} setFilter={setFilter} countries={countries} setCountries={setCountries}></SearchPage> : <CountryPage selected={selected} setPageState={setPageState}></CountryPage>
       }
     </div>
   );
