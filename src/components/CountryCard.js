@@ -6,8 +6,8 @@ function CountryCard({countryData, setSelected, setPageState}) {
   }
 
   return (
-    <div className="bg-white">
-      <img className="cursor-pointer" alt={countryData.name.common} src={countryData.flags.png} onClick={handleSelection}></img>
+    <div className="bg-white w-full">
+      <img className="cursor-pointer w-full h-52 rounded shadow-md" alt={countryData.name.common} src={countryData.flags.png} onClick={handleSelection}></img>
       <div>
         <h2><strong>{countryData.name.common} </strong></h2>
         <h4><strong>Population:</strong>{countryData.population}</h4>

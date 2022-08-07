@@ -50,7 +50,7 @@ function SearchBar({countries, setCountries, filter, setFilter, searchValue, set
       <div className="rounded w-[700px] shadow-lg h-[55px] flex m-10 items-center bg-white">
         <div className="flex-initial w-70px pl-7 pr-5 bg-white">🔍︎</div>
         <input
-            className="flex-initial w-full mr-7 h-2/3"
+            className="flex-initial w-full mr-7 h-2/3 text-LightModeInput"
             type="text"
             placeholder="Search for a country..."
             onChange={handleSearchChange}
