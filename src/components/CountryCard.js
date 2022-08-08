@@ -1,6 +1,11 @@
-function CountryCard({countryData, setSelected, setPageState}) {
+import axios from "axios";
+
+function CountryCard({countryData, setSelected, setPageState, setCountries}) {
 
   function handleSelection(){
+    axios.get(`https://restcountries.com/v3.1/all`).then(res => {
+        setCountries(res.data);
+    });
     setSelected(countryData)
     setPageState(1)
   }

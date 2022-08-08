@@ -20,7 +20,7 @@ function App() {
     <div className="w-full h-screen bg-LightModeBackground">
       <Header setModeState={modeChangeHandler}></Header>
       {
-        pageState === 0 ? <SearchPage setPageState={setPageState} selected={selected} setSelected={setSelected} searchValue={searchValue} setSearchValue={setSearchValue} filter={filter} setFilter={setFilter} countries={countries} setCountries={setCountries}></SearchPage> : <CountryPage selected={selected} setPageState={setPageState}></CountryPage>
+        pageState === 0 ? <SearchPage setPageState={setPageState} selected={selected} setSelected={setSelected} searchValue={searchValue} setSearchValue={setSearchValue} filter={filter} setFilter={setFilter} countries={countries} setCountries={setCountries}></SearchPage> : <CountryPage selected={selected} setSelected={setSelected} countries={countries} setPageState={setPageState}></CountryPage>
       }
     </div>
   );

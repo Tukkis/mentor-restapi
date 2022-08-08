@@ -13,7 +13,6 @@ function SearchBar({countries, setCountries, filter, setFilter, searchValue, set
 
   function handleSearchChange(e){
     const fieldValue = e.target.value
-    console.log(fieldValue,filter,filterLiteral[filter])
     setSearchValue(fieldValue)
     if(fieldValue.length > 0){
       axios.get(`https://restcountries.com/v3.1/name/${fieldValue}`).then(res => {
