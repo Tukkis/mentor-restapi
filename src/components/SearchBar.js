@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function SearchBar({countries, setCountries, filter, setFilter, searchValue, setSearchValue}) {
+function SearchBar({ modeState, setCountries, filter, setFilter, searchValue, setSearchValue }) {
 
   const filterLiteral= {
     0: '',
@@ -45,18 +45,18 @@ function SearchBar({countries, setCountries, filter, setFilter, searchValue, set
   }
 
   return (
-    <div className="flex justify-between">
-      <div className="rounded w-[700px] shadow-lg h-[55px] flex m-10 mx-20 items-center bg-white">
-        <div className="flex-initial w-70px pl-7 pr-5 bg-white">🔍︎</div>
+    <div className={`sm:flex mr-[112px] justify-between ${modeState === 0 ? '' : 'bg-DarkModeBackground'}`}>
+      <div className={`rounded sm:w-[700px] shadow-lg h-[55px] flex m-10 sm:mx-20 mx-10 items-center ${modeState === 0 ? '' : 'bg-DarkModeElements'}`}>
+        <div className="flex-initial w-70px pl-7 pr-5 ">🔍︎</div>
         <input
-            className="flex-initial w-full mr-7 h-2/3 text-LightModeInput"
+            className={`flex-initial w-full mr-7 h-2/3 ${modeState === 0 ? 'text-LightModeInput' : 'bg-DarkModeElements text-white'}`}
             type="text"
             placeholder="Search for a country..."
             onChange={handleSearchChange}
         />
       </div>
-      <div className="rounded w-[200] shadow-lg h-[55px] m-10 mr-20 flex items-center bg-white justify-self-end">
-        <select className="h-full" value={filter} onChange={handleFilterChange}>
+      <div className="rounded sm:w-[200] w-20 shadow-lg h-[55px] m-10 flex items-center justify-self-end">
+        <select className={`h-full pr-5 ${modeState === 0 ? '' : 'bg-DarkModeElements text-white'}`} value={filter} onChange={handleFilterChange}>
           <option value="0">Filter by Region</option>
           <option value="1">Africa</option>
           <option value="2">America</option>
